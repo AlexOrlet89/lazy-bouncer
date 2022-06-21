@@ -49,10 +49,10 @@ describe('lazy-bouncer routes', () => {
     });
   });
 
-  it.only('returns the current user', async () => {
+  it('returns the current user', async () => {
     const [agent, user] = await registerAndLogin();
     const me = await agent.get('/api/v1/users/me');
-    console.log(me);
+    // console.log(me);
 
     expect(me.body).toEqual({
       ...user,
